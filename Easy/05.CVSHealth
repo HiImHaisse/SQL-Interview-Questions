@@ -1,0 +1,5 @@
+Select drug,total_sales-cogs as total_profit
+FROm pharmacy_sales
+group by drug
+order by total_profit desc
+limit 3
