@@ -1,0 +1,5 @@
+SELECT manufacturer, 
+CONCAT('$',round(sum(total_sales)/1000000,0),' million') as sales_mil
+from pharmacy_sales
+group by manufacturer
+order by sum(total_sales) DESC
