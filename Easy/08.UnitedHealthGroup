@@ -1,0 +1,7 @@
+SELECT count(policy_holder_id) as policy_holder_count FROM
+(
+select policy_holder_id, count(case_id) 
+from callers
+where call_duration_secs > 0
+group by policy_holder_id
+having count(case_id) >=3 ) as conteo 
