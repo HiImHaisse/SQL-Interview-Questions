@@ -1,0 +1,3 @@
+SELECT Round(Cast(sum(order_occurrences*item_count) as NUMERIC)/
+Cast(sum(order_occurrences) as Numeric),1) as mean
+from items_per_order
