@@ -1,0 +1,5 @@
+/*Intento 1: */
+SELECT customer_id FROM customer_contracts 
+where product_id in(1,3,6)
+group by customer_id
+having count(product_id)=3
