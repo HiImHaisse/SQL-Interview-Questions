@@ -1,0 +1,11 @@
+with t3 as(
+select t1.customer_id,t1.product_id,t2.product_category
+from customer_contracts as t1
+inner join products as t2 ON t1.product_id=t2.product_id
+), t4 as(
+select count(distinct product_category) as cantidad_empresas from products
+)
+SELECT customer_id 
+from t3
+group by customer_id
+having count(DISTINCT product_category)=(select cantidad_empresas from t4)
