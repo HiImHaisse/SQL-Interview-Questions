@@ -8,4 +8,7 @@ sum(case when signup_action='Not Confirmed' then 1 else 1 end) as total
 from t3)
 select ROUND(CAST(confirmed AS decimal(10,2))/CAST(total AS decimal(10,2)),2) as confirm_rate
 from t4
-/* Los case si quieren se usados deben ser almacenados como un valor y se le deba asignar eltipo de valor con cast */
+/* Los case si quieren se usados deben ser almacenados como un valor y se le deba asignar eltipo de valor con cast 
+En PostgreSQL puedes usar :: para transformarlos datos ejemplo: confirmed::DECIMAL
+
+*/
