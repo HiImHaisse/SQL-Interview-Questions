@@ -5,7 +5,7 @@ order by acumulado desc),t2 as (
 select user_id,song_id,song_plays from songs_history)
 select user_id,song_id, sum(song_plays) as song_plays
 from(select user_id,song_id,acumulado as song_plays from t1  
-union 
+union all 
 select user_id,song_id, song_plays from t2
 ) as t3
 group by song_id,user_id
